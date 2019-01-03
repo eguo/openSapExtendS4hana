@@ -1,0 +1,13 @@
+---
+applications:
+
+- name: approuter
+  routes:
+    - route: approuter-i867829trial.cfapps.us10.hana.ondemand.com
+  path: approuter
+  memory: 128M
+  env:
+    TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.us10.hana.ondemand.com'
+    destinations: '[{"name":"app-destination", "url":"https://address-manager-optimistic-hartebeest.cfapps.us10.hana.ondemand.com/", "forwardAuthToken": true}]'
+  services:
+  - myuaa
