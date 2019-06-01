@@ -1,0 +1,11 @@
+#Password=<< Existing password/certificate removed on export >>
+#
+#Thu Dec 20 19:11:07 UTC 2018
+Description=S4H
+Type=HTTP
+Authentication=BasicAuthentication
+Name=ErpQueryEndpoint
+CloudConnectorLocationId=ubuntu-tiint-canary
+ProxyType=OnPremise
+URL=http\://s4h.ubuntu\:50000
+User=BPINST
