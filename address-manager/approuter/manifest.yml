@@ -3,11 +3,11 @@ applications:
 
 - name: approuter
   routes:
-    - route: approuter-i867829trial.cfapps.eu10.hana.ondemand.com
+    - route: approuter-edge-ain.cfapps.sap.hana.ondemand.com
   path: approuter
   memory: 128M
   env:
-    TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.eu10.hana.ondemand.com'
-    destinations: '[{"name":"app-destination", "url":"https://address-manager-timely-zebra.cfapps.eu10.hana.ondemand.com/", "forwardAuthToken": true}]'
+    TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.sap.hana.ondemand.com'
+    destinations: '[{"name":"app-destination", "url":"https://address-manager-impressive-kudu.cfapps.sap.hana.ondemand.com/", "forwardAuthToken": true}]'
   services:
   - xsuaa-addr-mgr
