@@ -1,0 +1,11 @@
+---
+applications:
+- name: destination_service_nodejs
+  random-route: true
+  path: destination_service_nodejs
+  memory: 128M
+  services:
+  - addr-mgr-qod
+  - xsuaa-addr-mgr
+  - con-addr-mgr-qod
+    

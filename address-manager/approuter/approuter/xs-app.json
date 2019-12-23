@@ -8,6 +8,10 @@
     "source": "^/address-manager/(.*)",
     "target": "/address-manager/$1",
     "destination": "app-destination"
+  },{
+    "source": "^/k8s/(.*)",
+    "target": "/$1",
+    "destination": "nodejs-example"
   }
   ],
   "logout" : {

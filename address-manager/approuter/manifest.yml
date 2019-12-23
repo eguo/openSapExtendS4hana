@@ -8,6 +8,6 @@ applications:
   memory: 128M
   env:
     TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.sap.hana.ondemand.com'
-    destinations: '[{"name":"app-destination", "url":"https://address-manager-impressive-kudu.cfapps.sap.hana.ondemand.com/", "forwardAuthToken": true}]'
+    destinations: '[{"name":"app-destination", "url":"https://address-manager-impressive-kudu.cfapps.sap.hana.ondemand.com/", "forwardAuthToken": true},{"name":"nodejs-example", "url":"https://destinationservicenodejs-brash-hartebeest.cfapps.sap.hana.ondemand.com/", "forwardAuthToken": true}]'
   services:
   - xsuaa-addr-mgr
