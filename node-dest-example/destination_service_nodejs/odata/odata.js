@@ -76,7 +76,7 @@ function createToken(destAuthUrl, clientId, clientSecret) {
  * destination details.
  *
  * -----------------------------------------
- * NOTE WE ASSUME A DESTINATION OF testdest
+ * NOTE WE ASSUME A DESTINATION OF 
  * -----------------------------------------
  *
  * As above we do a GET request but instead of authentication we supply a bearer and access token
@@ -147,7 +147,7 @@ function readOrderDetails() {
 
                 request({
                     method: 'GET',
-                    url: `${url}/api/v1/default/secrets`,
+                    url: `${url}/`,
                     json: true
                 }, function(error, response) {
                     if (error) {
