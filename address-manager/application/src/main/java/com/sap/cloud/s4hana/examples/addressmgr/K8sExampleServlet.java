@@ -39,11 +39,13 @@ public class K8sExampleServlet extends HttpServlet {
             JSONObject jsonObj = new JSONObject(System.getenv("VCAP_SERVICES"));
             JSONArray jsonArr = jsonObj.getJSONArray("connectivity");
             JSONObject credentials = jsonArr.getJSONObject(0).getJSONObject("credentials");
-            jsonResult = new Gson().toJson(credentials);
-            String clientid = credentials.getString("clientid");
-//            response.setContentType("application/json");
-            response.setContentType("text/plain");
-            response.getWriter().write(clientid);
+//            jsonResult = new Gson().toJson(credentials);
+            JSONObject xsuaaCredentials = jsonObj.getJSONArray("xsuaa").getJSONObject(0).getJSONObject("credentials");
+            jsonResult = new Gson().toJson(xsuaaCredentials);
+//            String clientid = credentials.getString("clientid");
+            response.setContentType("application/json");
+//            response.setContentType("text/plain");
+            response.getWriter().write(jsonResult);
         } catch (Exception e) {
             logger.error("Error occured while handling request", e);
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error occured while handling request: " + e.toString());
