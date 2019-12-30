@@ -39,7 +39,7 @@ public class K8sExampleServlet extends HttpServlet {
             JSONObject jsonObj = new JSONObject(System.getenv("VCAP_SERVICES"));
             JSONArray jsonArr = jsonObj.getJSONArray("connectivity");
             JSONObject credentials = jsonArr.getJSONObject(0).getJSONObject("credentials");
-            jsonResult = new Gson().toJson(jsonObj);
+            jsonResult = new Gson().toJson(credentials);
             response.setContentType("application/json");
             response.getWriter().write(jsonResult);
         } catch (Exception e) {
