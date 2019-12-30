@@ -40,8 +40,10 @@ public class K8sExampleServlet extends HttpServlet {
             JSONArray jsonArr = jsonObj.getJSONArray("connectivity");
             JSONObject credentials = jsonArr.getJSONObject(0).getJSONObject("credentials");
             jsonResult = new Gson().toJson(credentials);
-            response.setContentType("application/json");
-            response.getWriter().write(jsonResult);
+            String clientid = credentials.getString("clientid");
+//            response.setContentType("application/json");
+            response.setContentType("text/plain");
+            response.getWriter().write(clientid);
         } catch (Exception e) {
             logger.error("Error occured while handling request", e);
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error occured while handling request: " + e.toString());
